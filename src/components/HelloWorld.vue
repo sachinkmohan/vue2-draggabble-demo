@@ -11,6 +11,10 @@
           </draggable>
         </div>
 
+        <div id="button">
+          <input type="text" id="widget" v-model="name">
+          <button v-on:click="addWidgetItem">Add Widget Item</button>
+        </div>
         <div class="col-5">
           <h4 class="mb-3">Draggable 2</h4>
           <draggable class="draggable-list" :list="list2" group="my-group">
@@ -32,9 +36,16 @@ export default {
   data() {
     return {
       list1: [{ name: "Drag Me!" }],
-      list2: [{ name: "Drag Me Too!" }],
+      list2: [{ name: "Drag Me Too!"} , {name: "Drag 3"}],
+      name: "",
     };
   },
+  methods: {
+    addWidgetItem() {
+      this.list2.push({name:this.name});
+      console.log(this.list2)
+    }
+  }
 };
 </script>
 <style scoped>
