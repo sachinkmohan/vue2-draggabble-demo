@@ -18,7 +18,7 @@
         <div class="col-5">
           <h4 class="mb-3">Draggable 2</h4>
           <draggable class="draggable-list" :list="list2" group="my-group">
-            <div class="list-item" v-for="element in list2" :key="element.name">
+            <div class="list-item" v-for="element in sortedNames" :key="element.name">
               {{ element.name }}
             </div>
           </draggable>
@@ -37,14 +37,38 @@ export default {
     return {
       list1: [{ name: "Drag Me!" }],
       list2: [{ name: "Drag Me Too!"} , {name: "Drag 3"}],
+      list3: [],
       name: "",
     };
   },
   methods: {
     addWidgetItem() {
       this.list2.push({name:this.name});
-      console.log(this.list2)
+      console.log(this.list2.name)
+    },
+    sortArrayItems() {
+      return [...this.list2].slice().sort(function(a,b) {
+        return (a.name > b.name) ? 1 : -1;
+      })
     }
+  },
+  // computed: {
+  //   SortNames2() {
+  //     return this.list2.sort((a,b) => a.name.localeCompare(b.name));
+  //   }
+  // }
+  computed: {
+      sortedNames: function(){
+        function compare(a, b) {
+          if(a.name < b.name)
+            return -1;
+          if(a.name > b.name)
+            return 1;
+          return 0;
+        }
+        return [...this.list2].sort(compare);
+      }
+    
   }
 };
 </script>
