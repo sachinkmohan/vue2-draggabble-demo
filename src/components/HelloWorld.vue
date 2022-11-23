@@ -5,7 +5,7 @@
         <div class="col-5">
           <h4 class="mb-3">Draggable 1</h4>
           <draggable class="draggable-list" :list="list1" group="my-group">
-            <div class="list-item" v-for="element in list1" :key="element.name">
+            <div class="list-item1x1" v-for="element in list1" :key="element.name">
               {{ element.name }}
             </div>
           </draggable>
@@ -18,7 +18,7 @@
         <div class="col-5">
           <h4 class="mb-3">Draggable 2</h4>
           <draggable class="draggable-list" :list="list2" group="my-group">
-            <div class="list-item" v-for="element in sortedNames" :key="element.name">
+            <div class="list-item2x2" v-for="element in sortedNames" :key="element.name">
               {{ element.name }}
             </div>
           </draggable>
@@ -77,10 +77,22 @@ export default {
   background: #3f51b5;
   color: #fff;
   border: 1px solid;
-  height: 50vh;
+  height: 30vh;
 }
-.list-item {
+.list-item1x1 {
+  width: 50px;
+  height: 50px;
   margin: 10px;
+  padding: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  background: #f44336;
+  display: inline-block;
+}
+.list-item2x2 {
+  margin: 10px;
+  height: 100px;
   padding: 40px;
   cursor: pointer;
   font-size: 18px;
