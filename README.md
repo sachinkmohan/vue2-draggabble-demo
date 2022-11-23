@@ -6,6 +6,7 @@
 #### Helpful links
 
 - https://stackoverflow.com/questions/11237525/add-unique-css-to-different-array-elements
+- Youtube on add new data - https://www.youtube.com/watch?v=HiYkzdAssBQ&t=587s
 
 ## Project setup
 ```
