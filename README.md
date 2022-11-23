@@ -2,6 +2,11 @@
 
 ### Reference -> https://blog.logrocket.com/getting-started-vue-draggable/
 
+
+#### Helpful links
+
+- https://stackoverflow.com/questions/11237525/add-unique-css-to-different-array-elements
+
 ## Project setup
 ```
 npm install
